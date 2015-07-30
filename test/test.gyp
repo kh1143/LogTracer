@@ -3,7 +3,7 @@
 {
     'includes':
     [
-        '../LogTracer.gypi',
+        '../BuildAll.gypi',
     ],
 
     'targets':
@@ -14,14 +14,14 @@
             
             'dependencies':
             [
-
+                '../LogTracer/LogTracer.gyp:*',
             ],
 
             'defines':
             [
 
             ],
-
+            
             'include_dirs':
             [
                 '../include',
@@ -31,7 +31,7 @@
             [
                 './main.cpp',
             ],
-
+            
             'conditions':
             [
                 [

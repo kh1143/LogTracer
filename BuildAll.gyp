@@ -3,18 +3,18 @@
 {
     'includes':
     [
-        './LogTracer.gypi',
+        './BuildAll.gypi',
     ],
 
 	# 프로젝트 생성
 	'targets':
 	[
 	    {
-	        'target_name': 'LogTracer',
+	        'target_name': 'BuildAll',
 	        'type': 'none',
 	        'dependencies':
 	        [
-                './src/src.gyp:*',
+                './LogTracer/LogTracer.gyp:*',
                 './test/test.gyp:*',
 	        ],
         },

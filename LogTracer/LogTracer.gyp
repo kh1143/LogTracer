@@ -3,13 +3,13 @@
 {
     'includes':
     [
-        '../LogTracer.gypi',
+        '../BuildAll.gypi',
     ],
 
     'targets':
     [
         {
-            'target_name': 'test',
+            'target_name': 'LogTracer',
             'type': 'static_library',
             
             'dependencies':
@@ -25,10 +25,17 @@
             'include_dirs':
             [
                 '../include',
+                '.',
             ],
 
             'sources':
             [
+                './LogTracer.cpp',
+                './LogTracerTrace.cpp',
+                './LogTracerInfo.cpp',
+                './LogTracerWarning.cpp',
+                './LogTracerError.cpp',
+                './LogTracerAssert.cpp',
             ],
 
             'conditions':
