@@ -6,7 +6,7 @@
  *      Email : kh-1143@hanmail.net
  */
 
-#include "LogTracerWarning.h"
+#include "impl/LogTracerWarning.h"
 
 CLogTracerWarning::CLogTracerWarning()
 {

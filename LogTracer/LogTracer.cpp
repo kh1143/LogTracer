@@ -8,12 +8,6 @@
 
 #include "LogTracerImpl.h"
 
-#include "LogTracerTrace.h"
-#include "LogTracerInfo.h"
-#include "LogTracerWarning.h"
-#include "LogTracerError.h"
-#include "LogTracerAssert.h"
-
 namespace LogTracer
 {
 

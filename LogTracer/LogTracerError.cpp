@@ -11,15 +11,14 @@
 #include <unistd.h>
 #include <string>
 
-#include "LogTracerError.h"
+#include "impl/LogTracerError.h"
 
 namespace LogTracer
 {
 
-CLogTracerError::CLogTracerError(std::string fmt)
+CLogTracerError::CLogTracerError()
 {
     // TODO Auto-generated constructor stub
-    m_szMessage = fmt.c_str();
 }
 
 CLogTracerError::~CLogTracerError()
@@ -29,9 +28,15 @@ CLogTracerError::~CLogTracerError()
 
 void CLogTracerError::operator()(std::string s)
 {
-    char * szTemp;
-    snprintf( szTemp, 64, m_szMessage, s.c_str() );
-    printf( "%s\n", s.c_str() );
+    printf( "func: %s\n", s.c_str() );
 }
+
+CLogTracerError& CLogTracerError::operator<<(std::string s)
+{
+    printf( "stream: %s\n", s.c_str() );
+
+    return *this;
+}
+
 
 }

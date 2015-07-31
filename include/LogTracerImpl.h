@@ -35,9 +35,10 @@ public:
     virtual ~CLogTracer();
 
 public:
-    void Initialize();
+    static void Initialize();
 
-//    virtual void operator()(std::string s);
+    virtual void operator()(std::string s);
+    virtual CLogTracerError& operator<<(std::string s);
 
 //    template<typename T>
 //    std::ostream& operator<<(T n);
@@ -49,18 +50,10 @@ public:
     // std::ostream& operator<<<TYPE>(TYPE t);
 };
 
-
-class CLogTracerError : public CLogTracer
-{
-private:
-    const char *m_szMessage;
-public:
-    CLogTracerError(std::string fmt);
-    virtual ~CLogTracerError();
-
-public:
-    virtual void operator()(std::string s);
-};
-
 }
 
+#include "impl/LogTracerTrace.h"
+#include "impl/LogTracerInfo.h"
+#include "impl/LogTracerWarning.h"
+#include "impl/LogTracerError.h"
+#include "impl/LogTracerAssert.h"

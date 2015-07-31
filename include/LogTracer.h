@@ -8,14 +8,16 @@
 
 #pragma once
 
+
 #include "LogTracerImpl.h"
 
 // LogTracer Main API
 #define LOG_TRACE       CLogTracerTrace
 #define LOG_INFO        CLogTracerInfo
 #define LOG_WARNING     CLogTracerWarning
-#define LOG_ERROR       LogTracer::CLogTracerError("%s")
+#define LOG_ERROR       LogTracer::CLogTracerError::GetInstance()
 #define LOG_ASSERT      CLogTracerAssert
+
 
 #ifdef _DEBUG
 #define DLOG_TRACE      LOG_TRACE
@@ -30,3 +32,4 @@
 #define DLOG_ERROR      ( (void)0 )
 #define DLOG_ASSERT     ( (void)0 )
 #endif
+

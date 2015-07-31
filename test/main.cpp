@@ -49,7 +49,8 @@ int main(int argc, char* argv[])
     printf(" Release\n");
 #endif
 
-    LOG_ERROR( " test " );
+    LOG_ERROR( " test1 " );
+    LOG_ERROR << " test2 " << "test3";
 
     foo();
 

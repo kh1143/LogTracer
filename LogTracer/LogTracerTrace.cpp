@@ -6,7 +6,7 @@
  *      Email : kh-1143@hanmail.net
  */
 
-#include "LogTracerTrace.h"
+#include "impl/LogTracerTrace.h"
 
 CLogTracerTrace::CLogTracerTrace()
 {
