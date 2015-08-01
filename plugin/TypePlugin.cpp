@@ -13,7 +13,6 @@
 
 #include "TypePlugin.h"
 
-
 namespace TypePlugin
 {
 

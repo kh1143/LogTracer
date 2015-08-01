@@ -15,9 +15,6 @@ namespace LogTracer
 
 class CLogTracerError : public CLogTracer
 {
-private:
-
-
 public:
     CLogTracerError();
     virtual ~CLogTracerError();
