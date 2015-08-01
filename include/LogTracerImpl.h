@@ -1,5 +1,5 @@
 /*
- * LogTracer.h
+ * LogTracerImpl.h
  *
  *  Created on: Jul 30, 2015
  *      Author: Andrew Heebum Kwak
@@ -28,7 +28,12 @@ enum LOG_LEVEL
 class CLogTracer
 {
 private:
+    static bool m_bInit;
 
+    //TODO 나중에 더욱 효율을 높이기 위해, std::string 대신 const char* 등을 이용한다.
+    static std::string m_strName;
+    static std::string m_strPath;
+    static std::string m_strStream;
 
 public:
     CLogTracer();
@@ -37,17 +42,28 @@ public:
 public:
     static void Initialize();
 
-    virtual void operator()(std::string s);
-    virtual CLogTracerError& operator<<(std::string s);
+    virtual void operator()(const char *format, ...) = 0;
+    
+    virtual CLogTracer& operator<<(bool s) = 0;
+    virtual CLogTracer& operator<<(char s) = 0;
+    virtual CLogTracer& operator<<(signed short s) = 0;
+    virtual CLogTracer& operator<<(unsigned short s) = 0;
+    virtual CLogTracer& operator<<(signed int s) = 0;
+    virtual CLogTracer& operator<<(unsigned int s) = 0;
+    virtual CLogTracer& operator<<(signed long long s) = 0;
+    virtual CLogTracer& operator<<(unsigned long long s) = 0;
+    virtual CLogTracer& operator<<(float s) = 0;
+    virtual CLogTracer& operator<<(double s) = 0;
+    virtual CLogTracer& operator<<(const char *s) = 0;
+    virtual CLogTracer& operator<<(std::string& s) = 0;
 
-//    template<typename T>
-//    std::ostream& operator<<(T n);
+    //TODO Type을 Plugin화 해서 붙일 수 있다.
+    //virtual CLogTracer& operator<<(CPluginType& s) = 0;
 
-//    virtual CLogTracer& operator<<(int s);
-    // TODO
-    // Template 특수화를 이용하여, Plugin의 타입 사용할수 있게 만들기
-    // template<>
-    // std::ostream& operator<<<TYPE>(TYPE t);
+protected:
+    int PrintToFile(std::string message);
+    int PrintToConsloe(std::string message);
+
 };
 
 }

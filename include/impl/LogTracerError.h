@@ -29,8 +29,20 @@ public:
         return self;
     }
 
-    virtual void operator()(std::string s);
-    virtual CLogTracerError& operator<<(std::string s);
+    virtual void operator()(const char *format, ...);
+    
+    virtual CLogTracer& operator<<(bool s);
+    virtual CLogTracer& operator<<(char s);
+    virtual CLogTracer& operator<<(signed short s);
+    virtual CLogTracer& operator<<(unsigned short s);
+    virtual CLogTracer& operator<<(signed int s);
+    virtual CLogTracer& operator<<(unsigned int s);
+    virtual CLogTracer& operator<<(signed long long s);
+    virtual CLogTracer& operator<<(unsigned long long s);
+    virtual CLogTracer& operator<<(float s);
+    virtual CLogTracer& operator<<(double s);
+    virtual CLogTracer& operator<<(const char *s);
+    virtual CLogTracer& operator<<(std::string& s);
 };
 
 }
