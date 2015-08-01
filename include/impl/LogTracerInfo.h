@@ -1,5 +1,5 @@
 /*
- * LogTracer.h
+ * CLogTracerInfo.h
  *
  *  Created on: Jul 30, 2015
  *      Author: Andrew Heebum Kwak
@@ -10,9 +10,21 @@
 
 #include "LogTracerImpl.h"
 
-class CLogTracerInfo : public LogTracer::CLogTracer
+namespace LogTracer
+{
+
+class CLogTracerInfo : public CLogTracer
 {
 public:
     CLogTracerInfo();
     virtual ~CLogTracerInfo();
+
+public:
+    static CLogTracerInfo &GetInstance()
+    {
+        static CLogTracerInfo self;
+        return self;
+    }
 };
+
+}
