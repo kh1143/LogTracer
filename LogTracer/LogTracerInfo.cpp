@@ -8,6 +8,9 @@
 
 #include "impl/LogTracerInfo.h"
 
+namespace LogTracer
+{
+
 CLogTracerInfo::CLogTracerInfo()
 {
     // TODO Auto-generated constructor stub
@@ -19,3 +22,4 @@ CLogTracerInfo::~CLogTracerInfo()
     // TODO Auto-generated destructor stub
 }
 
+}

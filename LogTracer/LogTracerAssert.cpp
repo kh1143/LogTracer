@@ -8,6 +8,9 @@
 
 #include "impl/LogTracerAssert.h"
 
+namespace LogTracer
+{
+
 CLogTracerAssert::CLogTracerAssert()
 {
     // TODO Auto-generated constructor stub
@@ -19,3 +22,4 @@ CLogTracerAssert::~CLogTracerAssert()
     // TODO Auto-generated destructor stub
 }
 
+}

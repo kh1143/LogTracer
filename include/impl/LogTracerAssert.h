@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/*	
-=======
 /*
->>>>>>> 4d63b97199f5312cab83191a6f933366431853b7
  * CLogTracerAssert.h
  *
  *  Created on: Jul 30, 2015

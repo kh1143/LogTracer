@@ -8,6 +8,9 @@
 
 #include "impl/LogTracerWarning.h"
 
+namespace LogTracer
+{
+
 CLogTracerWarning::CLogTracerWarning()
 {
     // TODO Auto-generated constructor stub
@@ -19,3 +22,4 @@ CLogTracerWarning::~CLogTracerWarning()
     // TODO Auto-generated destructor stub
 }
 
+}

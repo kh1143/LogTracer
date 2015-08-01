@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <iostream>
+#include <string>
 
 namespace LogTracer
 {
@@ -64,6 +64,10 @@ protected:
     int PrintToFile(std::string message);
     int PrintToConsloe(std::string message);
 
+    inline void FillSpace()
+    {
+    	m_strStream += ' ';
+    }
 };
 
 }
