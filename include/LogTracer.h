@@ -12,11 +12,11 @@
 #include "LogTracerImpl.h"
 
 // LogTracer Main API
-#define LOG_TRACE       CLogTracerTrace
-#define LOG_INFO        CLogTracerInfo
-#define LOG_WARNING     CLogTracerWarning
+#define LOG_TRACE       LogTracer::CLogTracerTrace::GetInstance()
+#define LOG_INFO        LogTracer::CLogTracerInfo::GetInstance()
+#define LOG_WARNING     LogTracer::CLogTracerWarning::GetInstance()
 #define LOG_ERROR       LogTracer::CLogTracerError::GetInstance()
-#define LOG_ASSERT      CLogTracerAssert
+#define LOG_ASSERT      LogTracer::CLogTracerAssert::GetInstance()
 
 
 #ifdef _DEBUG
